@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ campaign.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ campaign.name }}</h2>
+<p><strong>Описание:</strong> {{ campaign.description }}</p>
+<h3>Персонажи:</h3>
+{% if characters %}
+    <ul>
+        {% for character in characters %}
+            <li><a href="/characters/{{ character.id }}">{{ character.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>У этой кампании пока нет персонажей.</p>
+{% endif %}
+<!-- Кнопка для создания персонажа -->
+<p><a href="/characters/create/{{ campaign.id }}">Добавить персонажа</a></p>
+<p><a href="/campaigns">Назад к списку кампаний</a></p>
+{% endblock %}
+

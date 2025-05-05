@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Heroes of Norn{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 1rem;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: #ddd;
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            padding: 1rem;
+        }
+
+        th.physical, td.physical {
+            background-color: #fff8dc; /* золотисто-бежевый (cornsilk) */
+        }
+
+        th.mental, td.mental {
+            background-color: #df857e; /* огненно-красный (moccasin) */
+        }
+
+        th.social, td.social {
+            background-color: #f3e5f5; /* светло-фиолетовый (lavender) */
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="/" style="color: #fff; text-decoration: none;">Heroes of Norn</a></h1>
+        <nav>
+            <a href="/register">Регистрация</a>
+            <a href="/login">Вход</a>
+            <a href="/campaigns">Кампании</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; 2025 D&D Manager. Все права защищены.
+    </footer>
+
+    <!-- Подключаем скрипт внизу -->
+    <script src="{{ url_for('static', path='js/rolls.js') }}"></script>
+</body>
+</html>
+

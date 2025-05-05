@@ -1,0 +1,151 @@
+************* Module app.skills
+app/skills.py:145:1: E0001: Parsing failed: 'unmatched ']' (app.skills, line 145)' (syntax-error)
+
+************* Module app.config
+app/config.py:35:0: C0305: Trailing newlines (trailing-newlines)
+************* Module app.main
+app/main.py:32:0: C0301: Line too long (103/100) (line-too-long)
+app/main.py:81:0: C0305: Trailing newlines (trailing-newlines)
+app/main.py:16:19: W0621: Redefining name 'app' from outer scope (line 25) (redefined-outer-name)
+app/main.py:16:19: W0613: Unused argument 'app' (unused-argument)
+app/main.py:5:0: C0411: standard import "contextlib.asynccontextmanager" should be placed before third party import "fastapi.FastAPI" (wrong-import-order)
+************* Module app.init_db
+app/init_db.py:16:0: C0305: Trailing newlines (trailing-newlines)
+app/init_db.py:4:0: W0611: Unused models imported from app.models (unused-import)
+************* Module app.dependencies
+app/dependencies.py:15:0: C0301: Line too long (115/100) (line-too-long)
+app/dependencies.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+app/dependencies.py:42:0: C0305: Trailing newlines (trailing-newlines)
+************* Module app.models.database
+app/models/database.py:43:0: C0305: Trailing newlines (trailing-newlines)
+app/models/database.py:41:4: C0415: Import outside toplevel (.models) (import-outside-toplevel)
+app/models/database.py:41:4: W0611: Unused models imported from  (unused-import)
+************* Module app.models.__init__
+app/models/__init__.py:9:0: C0305: Trailing newlines (trailing-newlines)
+************* Module app.models
+app/models/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module app.models.models
+app/models/models.py:98:0: C0301: Line too long (112/100) (line-too-long)
+app/models/models.py:116:0: C0301: Line too long (110/100) (line-too-long)
+app/models/models.py:156:0: C0305: Trailing newlines (trailing-newlines)
+app/models/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/models/models.py:8:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:26:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:44:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:67:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:89:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:107:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:125:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:142:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/models/models.py:3:0: W0611: Unused JSON imported from sqlalchemy (unused-import)
+************* Module app.schemas.character_role
+app/schemas/character_role.py:39:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/character_role.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/character_role.py:34:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module app.schemas.character_skill
+app/schemas/character_skill.py:44:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/character_skill.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/character_skill.py:23:4: W0107: Unnecessary pass statement (unnecessary-pass)
+app/schemas/character_skill.py:39:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/character_skill.py:4:0: C0411: standard import "typing.List" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+app/schemas/character_skill.py:4:0: W0611: Unused List imported from typing (unused-import)
+************* Module app.schemas.skill
+app/schemas/skill.py:45:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/skill.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/skill.py:23:4: W0107: Unnecessary pass statement (unnecessary-pass)
+app/schemas/skill.py:40:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/skill.py:4:0: C0411: standard import "typing.List" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+app/schemas/skill.py:4:0: W0611: Unused List imported from typing (unused-import)
+************* Module app.schemas.attribute
+app/schemas/attribute.py:44:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/attribute.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/attribute.py:22:4: W0107: Unnecessary pass statement (unnecessary-pass)
+app/schemas/attribute.py:39:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/attribute.py:4:0: C0411: standard import "typing.Optional" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+************* Module app.schemas.character_attribute
+app/schemas/character_attribute.py:43:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/character_attribute.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/character_attribute.py:23:4: W0107: Unnecessary pass statement (unnecessary-pass)
+app/schemas/character_attribute.py:38:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/character_attribute.py:4:0: C0411: standard import "typing.Optional" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+************* Module app.schemas.user
+app/schemas/user.py:6:0: C0301: Line too long (108/100) (line-too-long)
+app/schemas/user.py:43:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/user.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/user.py:25:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/user.py:38:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module app.schemas.character
+app/schemas/character.py:77:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/character.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/character.py:43:8: W0107: Unnecessary pass statement (unnecessary-pass)
+app/schemas/character.py:64:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/character.py:4:0: C0411: standard import "typing.List" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
+************* Module app.schemas.campaign
+app/schemas/campaign.py:52:0: C0305: Trailing newlines (trailing-newlines)
+app/schemas/campaign.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/schemas/campaign.py:32:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+app/schemas/campaign.py:47:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module app.crud
+app/crud/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module app.crud.crud_character_role
+app/crud/crud_character_role.py:33:0: C0305: Trailing newlines (trailing-newlines)
+************* Module app.crud.crud_user
+app/crud/crud_user.py:25:69: C0303: Trailing whitespace (trailing-whitespace)
+************* Module app.crud.crud_character
+app/crud/crud_character.py:34:0: C0301: Line too long (115/100) (line-too-long)
+app/crud/crud_character.py:41:0: C0301: Line too long (137/100) (line-too-long)
+app/crud/crud_character.py:61:0: C0301: Line too long (112/100) (line-too-long)
+app/crud/crud_character.py:107:0: C0301: Line too long (109/100) (line-too-long)
+app/crud/crud_character.py:210:0: C0301: Line too long (127/100) (line-too-long)
+app/crud/crud_character.py:228:0: C0301: Line too long (102/100) (line-too-long)
+app/crud/crud_character.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud/crud_character.py:107:0: R0912: Too many branches (13/12) (too-many-branches)
+app/crud/crud_character.py:235:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud/crud_character.py:9:0: C0411: standard import "typing.List" should be placed before third party import "sqlalchemy.orm.Session" (wrong-import-order)
+app/crud/crud_character.py:10:0: C0411: standard import "random" should be placed before third party import "sqlalchemy.orm.Session" (wrong-import-order)
+app/crud/crud_character.py:13:0: W0611: Unused CharacterAttributeCreate imported from app.schemas.character_attribute (unused-import)
+app/crud/crud_character.py:14:0: W0611: Unused CharacterSkillCreate imported from app.schemas.character_skill (unused-import)
+************* Module app.crud.crud_campaign
+app/crud/crud_campaign.py:20:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud/crud_campaign.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module app.routes.character_roles
+app/routes/character_roles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module app.routes.campaigns
+app/routes/campaigns.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/routes/campaigns.py:50:11: E0602: Undefined variable 'authenticate_user' (undefined-variable)
+app/routes/campaigns.py:92:8: W0707: Consider explicitly re-raising using 'raise HTTPException(status_code=400, detail=f'Ошибка при создании кампании: {e}') from e' (raise-missing-from)
+app/routes/campaigns.py:72:4: W0613: Unused argument 'request' (unused-argument)
+app/routes/campaigns.py:115:8: W0707: Consider explicitly re-raising using 'raise HTTPException(status_code=400, detail=f'Ошибка при создании кампании: {str(e)}') from e' (raise-missing-from)
+app/routes/campaigns.py:9:0: C0411: third party import "fastapi.security.OAuth2PasswordRequestForm" should be placed before first party import "app.crud"  (wrong-import-order)
+app/routes/campaigns.py:9:0: C0412: Imports from package fastapi are not grouped (ungrouped-imports)
+app/routes/campaigns.py:10:0: C0412: Imports from package app are not grouped (ungrouped-imports)
+app/routes/campaigns.py:7:0: W0611: Unused crud imported from app (unused-import)
+app/routes/campaigns.py:7:0: W0611: Unused schemas imported from app (unused-import)
+app/routes/campaigns.py:15:0: W0611: Unused UserOut imported from app.schemas.user (unused-import)
+************* Module app.routes.auth
+app/routes/auth.py:48:0: C0301: Line too long (112/100) (line-too-long)
+app/routes/auth.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routes/auth.py:51:0: C0301: Line too long (106/100) (line-too-long)
+app/routes/auth.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/routes/auth.py:25:4: C0415: Import outside toplevel (app.schemas.user.UserCreate) (import-outside-toplevel)
+************* Module app.routes.users
+app/routes/users.py:32:0: C0301: Line too long (116/100) (line-too-long)
+app/routes/users.py:37:0: C0301: Line too long (141/100) (line-too-long)
+app/routes/users.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+app/routes/users.py:9:0: C0411: third party import "fastapi.templating.Jinja2Templates" should be placed before first party imports "app.models.database.get_db", "app.schemas.user.UserCreate", "app.crud.crud_user", "app.auth.hash.hash_password"  (wrong-import-order)
+app/routes/users.py:9:0: C0412: Imports from package fastapi are not grouped (ungrouped-imports)
+************* Module app.routes.characters
+app/routes/characters.py:39:0: C0301: Line too long (104/100) (line-too-long)
+app/routes/characters.py:57:0: C0301: Line too long (111/100) (line-too-long)
+app/routes/characters.py:207:0: C0301: Line too long (115/100) (line-too-long)
+app/routes/characters.py:211:0: C0301: Line too long (105/100) (line-too-long)
+app/routes/characters.py:214:0: C0301: Line too long (104/100) (line-too-long)
+app/routes/characters.py:223:0: C0305: Trailing newlines (trailing-newlines)
+app/routes/characters.py:33:18: W0511: TODO: заменить на Depends(current_user) (fixme)
+app/routes/characters.py:34:22: W0511: TODO: заменить на Depends(campaign_context) (fixme)
+app/routes/characters.py:103:18: W0511: TODO: заменить на Depends(current_user) (fixme)
+app/routes/characters.py:1:0: R0401: Cyclic import (app.models.database -> app.models.models) (cyclic-import)
+
+------------------------------------------------------------------
+Your code has been rated at 7.96/10 (previous run: 7.77/10, +0.18)
+

@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Персонаж: {{ character.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ character.name }}</h2>
+
+<h3>Описание:</h3>
+<pre>{{ character.description }}</pre>
+
+<h3>Навыки по характеристикам:</h3>
+
+{% set attribute_colors = {
+    "Физ форма": "physical",
+    "Сноровка": "physical",
+    "Восприятие": "physical",
+    "Интеллект": "mental",
+    "Мудрость": "mental",
+    "Интуиция": "mental",
+    "Харизма": "social",
+    "Сила воли": "social",
+    "Эмпатия": "social"
+} %}
+
+
+<!-- Таблица: Характеристики по столбцам, навыки с кнопками — по строкам -->
+<table border="1" id="character-table">
+    <thead>
+        <tr>
+            {% for attr in attribute_names %}
+                <th class="{{ attribute_colors[attr] }}">{{ attr }} ({{ char_attr_values[attr] }})</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in range(5) %}
+        <tr>
+            {% for attr in attribute_names %}
+            <td class="{{ attribute_colors[attr] }}">
+                {% set skill_list = grouped_skills[attr] %}
+                {% if i < skill_list | length %}
+                    {% set skill = skill_list[i] %}
+                    {% set bonus = char_skill_values.get(skill.name, 0) %}
+                    <button
+                        class="roll-button"
+                        data-character-id="{{ character.id }}"
+                        data-attribute="{{ attr }}"
+                        data-attribute-value="{{ char_attr_values[attr] }}"
+                        data-skill="{{ skill.name }}"
+                        data-bonus="{{ bonus }}"
+                    >
+                        {{ skill.name }}: {{ bonus }}
+                    </button>
+                    <div class="roll-result"></div>
+                {% else %}
+                    &nbsp;
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<!-- История бросков -->
+<h3>История бросков</h3>
+<ul id="roll-history">
+    <!-- Записи будут добавляться динамически -->
+</ul>
+
+<p><a href="/campaigns/{{ character.campaign_id }}">Назад к кампании</a></p>
+
+<!-- JS для обработки бросков -->
+<script>
+    function rollDice(diceType) {
+        const [count, sides] = diceType.toLowerCase().split('d').map(Number);
+        let total = 0;
+        const rolls = [];
+        for (let i = 0; i < count; i++) {
+            const roll = Math.floor(Math.random() * sides) + 1;
+            rolls.push(roll);
+            total += roll;
+        }
+        return { total, rolls, sides };
+    }
+
+    function getDiceType(attrValue) {
+        const diceMap = {
+            1: "1d4",
+            2: "1d6",
+            3: "1d8",
+            4: "1d10",
+            5: "1d12"
+        };
+        return diceMap[attrValue] || "1d4";
+    }
+
+    document.querySelectorAll('.roll-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const characterId = button.dataset.characterId;
+            const attributeName = button.dataset.attribute;
+            const attributeValue = parseInt(button.dataset.attributeValue);
+            const skillName = button.dataset.skill;
+            const bonus = parseInt(button.dataset.bonus);
+
+            const diceType = getDiceType(attributeValue);
+            const result = rollDice(diceType);
+            const total = result.total + bonus;
+
+            // Вывод результата
+            const resultDiv = button.nextElementSibling;
+            resultDiv.textContent = `Результат: ${result.rolls.join(' + ')} + ${bonus} = ${total}`;
+
+            // Добавление в историю
+            const history = document.getElementById('roll-history');
+            const entry = document.createElement('li');
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${skillName} (${attributeName}): ${result.rolls.join(' + ')} + ${bonus} = ${total}`;
+            history.prepend(entry);
+        });
+    });
+</script>
+
+
+<a href="/characters/{{ character.id }}/edit">Редактировать</a>
+<form onsubmit="return deleteCharacter({{ character.id }})" style="display:inline;">
+    <button type="submit">Удалить</button>
+</form>
+
+<script>
+function deleteCharacter(characterId) {
+    if (!confirm("Вы уверены, что хотите удалить персонажа?")) return false;
+
+    fetch(`/characters/${characterId}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "/characters";
+        } else {
+            alert("Персонаж удален, вернитесь на страницу кампании");
+        }
+    });
+    return false; // чтобы форма не перезагружала страницу
+}
+</script>
+
+{% endblock %}
+

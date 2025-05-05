@@ -1,0 +1,13 @@
+<!-- templates/campaigns/list.html -->
+{% extends "base.html" %}
+
+{% block title %}Кампании{% endblock %}
+
+{% block content %}
+<h2>Список Кампаний</h2>
+<a href="/campaigns/create"><button>Создать кампанию</button></a>
+
+{% for campaign in campaigns %}
+    <p><a href="/campaigns/{{ campaign.id }}">{{ campaign.name }}</a></p>
+{% endfor %}
+{% endblock %}

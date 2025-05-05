@@ -1,0 +1,18 @@
+<!-- templates/campaigns/create.html -->
+{% extends "base.html" %}
+
+{% block title %}Создание кампании{% endblock %}
+
+{% block content %}
+<h2>Создать кампанию</h2>
+<form method="post" action="/campaigns/create">
+    <label for="name">Название кампании:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="description">Описание кампании:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br><br>
+    <button type="submit">Создать</button>
+</form>
+{% endblock %}
+
